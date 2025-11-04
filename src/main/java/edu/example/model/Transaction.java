@@ -6,15 +6,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-@Data
+import java.time.LocalDate;
 @Entity
-public class AccountHolder {
+@Data
+public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private  Long transactionId;
+    private LocalDate date;
+    private String type;
+    private double amount;
     private Long accountId;
-
-    private String accountHolderName;
-
-    private Double balance;
 }
